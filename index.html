@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eda home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <!-- Demo styles -->
+    <!-- vue js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .swiper-button-prev::after {
+            content: url("");
+        }
+
+        .swiper-button-next::after {
+            content: url("");
+        }
+
+        .swiper-pagination-bullet-active {
+            background: black;
+        }
+
+        .mobileMenu .swiper-pagination-bullet {
+            background: white;
+        }
+
+        .mobileMenu .swiper-pagination-bullet-active {
+            background: rgba(255, 255, 255, 0.679);
+        }
+    </style>
+
+</head>
+
+<body class="bg-black text-white md:bg-gray-50 md:text-black">
+    <!-- navbar start  -->
+    <nav
+        class="hidden md:flex items-center justify-between w-full py-4 px-5 bg-white z-10 border-gray-100 border-b sticky top-0">
+        <div class="flex items-center">
+            <div>
+                <img class="w-[240px]" src="/images/Mlogo.png" alt="">
+            </div>
+            <div id="search-field" class=" p-3 rounded-2xl flex items-center min-w-sm ml-4 bg-gray-100 relative">
+                <input type="search" class="w-full bg-transparent rounded shadow-none outline-none border-0 pl-7"
+                    placeholder="Search by name...">
+                <div class="absolute">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <!-- search dropdown inside this input -->
+                <div id="search-dropdown"
+                    class="overflow-hidden absolute top-12 left-0 w-full bg-white shadow-lg rounded-3xl text-left hidden whitespace-normal">
+                    <div v-for="a in 4" class="py-2 px-5 hover:bg-gray-100 transition-all cursor-pointer">Option 1</div>
+                    <div class="py-2 px-5 hover:bg-gray-100 transition-all cursor-pointer">Option 2</div>
+                    <div class="py-2 px-5 hover:bg-gray-100 transition-all cursor-pointer">Option 3</div>
+                    <div class="py-2 px-5 hover:bg-gray-100 transition-all cursor-pointer">Option 4</div>
+                </div>
+            </div>
+            <button class="p-3 rounded-2xl relative flex items-center ml-4 bg-yellow-300 whitespace-nowrap">
+                <i class="fa-solid fa-paper-plane mr-3"></i>
+                Specify delivery address
+            </button>
+        </div>
+        <div class="flex items-center">
+            <a href="cart.html">
+                <button class="p-3 rounded-2xl relative flex items-center ml-4 bg-gray-200 whitespace-nowrap group">
+                    <i class="fa-solid fa-basket-shopping mr-3"></i>
+                    basket
+                    <!-- cart dropdown inside this button -->
+                    <div
+                        class="absolute top-12 right-0 p-5 bg-white shadow-lg rounded-3xl text-left hidden group-hover:block whitespace-normal">
+                        <h3 class="font-bold text-base">Корзина</h3>
+                        <div>
+                            <div class="flex justify-between border-b py-5">
+                                <div class="flex">
+                                    <div class="w-14 mr-3">
+                                        <img class="w-full" src="/images/14.webp" alt="">
+                                    </div>
+                                    <div class="w-48 text-sm">
+                                        <p>Лапша Доширак со вкусом курицы</p>
+                                        <div class="font-semibold">
+                                            <span>79$</span>
+                                            .
+                                            <span class="text-gray-400">90 r</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div
+                                        class="bg-gray-200 rounded-lg h-8 w-8 flex items-center justify-center text-base font-bold text-gray-400">
+                                        <span>-</span>
+                                    </div>
+                                    <div class="font-bold mx-3">1</div>
+                                    <div
+                                        class="bg-gray-200 rounded-lg h-8 w-8 flex items-center justify-center text-base font-bold text-gray-400">
+                                        <i class="fa-light fa-plus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between border-b py-5">
+                                <div class="flex">
+                                    <div
+                                        class="w-14 h-14 flex items-center justify-center bg-gray-200 rounded-2xl mr-3">
+                                        <span class=""><i class="fa-solid fa-person-biking"></i></span>
+                                    </div>
+                                    <div class="w-48 text-sm">
+                                        <p>Лапша Доширак со вкусом курицы</p>
+                                        <div class="font-semibold">
+                                            <span>79$</span>
+                                            .
+                                            <span class="text-gray-400">Лапша Доширак</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="text-gray-300"><i class="fa-solid fa-circle-info"></i></span>
+                                </div>
+                            </div>
+                            <div class="bg-yellow-300 py-2 px-5 rounded-2xl flex items-center justify-between mt-5">
+                                <div>Checkout</div>
+                                <div class="text-2xl font-semibold">80$</div>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </a>
+            <button
+                class="p-3 h-[48px] min-w-[48px] flex items-center justify-center rounded-2xl w-12 ml-4 hover:bg-gray-100 cursor-pointer">
+                <i class="fa-solid fa-sliders"></i>
+            </button>
+            <button class="p-3 rounded-2xl relative flex items-center ml-4 bg-gray-200 whitespace-nowrap">
+                To come in
+            </button>
+        </div>
+    </nav>
+    <!-- mobile nvbar -->
+    <nav class="flex items-center py-5 px-3 bg-[#ffaba2] md:hidden sticky top-0 z-10">
+        <div class="mr-5">
+            <i class="fa-solid fa-arrow-left"></i>
+        </div>
+        <div>
+            <img class="w-[140px]" src="/images/Mlogo.png" alt="">
+        </div>
+    </nav>
+    <!-- navbar end -->
+    <div class="container mx-auto flex pb-5" id="app">
+        <main class="w-full overflow-hidden">
+            <!-- hero start -->
+            <div class="mt-5 hidden md:block">
+                <div class="my-6 px-5 md:px-0 flex items-center justify-between">
+                    <div class="flex">
+                        <h2 class="font-bold text-4xl">Grocery</h2>
+                    </div>
+                    <div class="px-3 py-2 rounded-xl cursor-pointer bg-gray-100 hover:bg-gray-200 transition-all">
+                        All <span><i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                </div>
+                <div class="overflow-hidden">
+                    <div class="swiper top-slide">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" v-for="i in 60">
+                                <a href="">
+                                    <div
+                                        class="bg-[url('https://eda.yandex/images/3583740/fa56a27eb64f48c689efb424c5f7b80d-600x450.png')] bg-cover bg-center rounded-3xl h-36">
+                                        <div class=" absolute right-0 bottom-0">
+                                            <div
+                                                class="text-base font-bold px-3 py-2 rounded-3xl bg-[#00000099] text-white flex">
+                                                <div class="mr-2">
+                                                    <svg width="1em" height="1em" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        class="UiKitUiKitIcon_m UiKitUiKitIcon_root Corner_icon">
+                                                        <path
+                                                            d="M13.935 3a1.732 1.732 0 1 0 0 3.465 1.732 1.732 0 0 0 0-3.465z"
+                                                            fill="#D2D0CC"></path>
+                                                        <path
+                                                            d="M8.999 5.248H7.714c-.46 0-.873.28-1.044.707L5.08 9.93a1.125 1.125 0 0 0 .52 1.412l4.726 2.338 1.686-5.62.269-.902 1.418.901V6.935l-2.186-1.093a5.622 5.622 0 0 0-2.514-.594z"
+                                                            fill="#FFE033"></path>
+                                                        <path
+                                                            d="M15.408 10.867s2.153 1.266 2.49 1.42c.308.141.65.42.445.784-.206.363-.717.293-1.128.11-.464-.208-1.99-.901-2.304-1.074-.268-.148-.368-.206-.466-.358-.204-.318-.6-.88-.6-.88l-.708 2.812s1.109 1.336 2.024 2.89l1.349 2.731c.289.49.833 1.223.313 1.512-.622.346-1.027.06-1.472-.52l-2.214-3.575c-.855-1.352-2.122-1.723-2.249-1.914-.284-.431-.269-1.79-.127-2.518.083-.424.334-1.677.579-2.819l-1.493 1.145s-.583 2.202-.645 2.506c-.076.368-.34.988-.594.936-.314-.066-.59-.287-.52-.813l.49-3.293c.079-.244.206-.415.409-.532l2.285-1.945c.27-.152.433-.314.877-.314h.845c.55 0 .828.226 1.212 1.097.408.924 1.202 2.612 1.202 2.612z"
+                                                            fill="#9E9B98"></path>
+                                                        <path
+                                                            d="M10.382 14.243 9.826 16.8s-1.439 2.084-1.84 2.668c-.3.438-.526.972-.011 1.361.577.437.927-.067 1.227-.404.316-.403 1.024-1.33 1.816-2.33.21-.265.327-.489.416-.711.06-.15.996-2.745 1.14-3.142h-2.192z"
+                                                            fill="#D2D0CC"></path>
+                                                        <path
+                                                            d="M15.204 9.408c-.213-.547-.575-1.395-.943-1.91-.231 1.038-.872 3.263-.595 3.817.24.48.976-.366 1.407-.933a1 1 0 0 0 .131-.974z"
+                                                            fill="#E3CA3F"></path>
+                                                        <path
+                                                            d="m10.202 13.048 1.04-3.465 1.04-2.425c.23-.116.863-.5 1.417-.223s.874.994.66 1.955c-.23 1.04-.692 3.257-.692 3.811 0 .464.032.347.195.965.108.145.017.563-.163.577h-2.81c-1.125 0-1.033-.587-1.033-.587l.346-.608z"
+                                                            fill="#F8D830"></path>
+                                                        <path
+                                                            d="M10.895 9.93c-.554 0-1.155-1.617-1.386-2.426.462-.23 1.594-.693 2.426-.693.831 0 .808 1.155.692 1.733-.346.461-1.178 1.385-1.732 1.385z"
+                                                            fill="#FFE033"></path>
+                                                    </svg>
+                                                </div>
+                                                <div class="">15 – 25 min</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                    </div>
+                    <div class="swiper-pagination relative my-5"></div>
+                </div>
+                <!-- mobile menu slider -->
+
+            </div>
+            <!-- Products start -->
+            <div>
+                <div class="my-6 px-5 md:px-0 flex items-center justify-between">
+                    <div class="flex">
+                        <h2 class="font-bold text-2xl">Offers</h2>
+                    </div>
+                </div>
+                <div>
+                    <div class="overflow-hidden px-5 md:px-0">
+                        <div class="swiper top-slide">
+                            <div class="swiper-wrapper">
+                                <div v-for="i in 10" class="swiper-slide">
+                                    <a href="">
+                                        <div
+                                            class="bg-[url('https://eda.yandex.ru/images/2353725/d04329b4df086d34e028849ec58673ba-450x300.jpg')] bg-cover bg-center rounded-3xl h-36 relative">
+                                            <div class=" absolute left-0 top-0 p-3">
+                                                <div
+                                                    class="text-base font-bold px-3 py-2 rounded-3xl bg-[#fae098cc] flex">
+                                                    <div class="">-14% with START14</div>
+                                                </div>
+                                            </div>
+                                            <div class=" absolute right-0 bottom-0">
+                                                <div
+                                                    class="text-base font-bold px-3 py-2 rounded-3xl bg-[#00000099] text-white flex">
+                                                    <div class="mr-2">
+                                                        <svg width="1em" height="1em" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            class="UiKitUiKitIcon_m UiKitUiKitIcon_root Corner_icon">
+                                                            <path
+                                                                d="M13.935 3a1.732 1.732 0 1 0 0 3.465 1.732 1.732 0 0 0 0-3.465z"
+                                                                fill="#D2D0CC">
+                                                            </path>
+                                                            <path
+                                                                d="M8.999 5.248H7.714c-.46 0-.873.28-1.044.707L5.08 9.93a1.125 1.125 0 0 0 .52 1.412l4.726 2.338 1.686-5.62.269-.902 1.418.901V6.935l-2.186-1.093a5.622 5.622 0 0 0-2.514-.594z"
+                                                                fill="#FFE033"></path>
+                                                            <path
+                                                                d="M15.408 10.867s2.153 1.266 2.49 1.42c.308.141.65.42.445.784-.206.363-.717.293-1.128.11-.464-.208-1.99-.901-2.304-1.074-.268-.148-.368-.206-.466-.358-.204-.318-.6-.88-.6-.88l-.708 2.812s1.109 1.336 2.024 2.89l1.349 2.731c.289.49.833 1.223.313 1.512-.622.346-1.027.06-1.472-.52l-2.214-3.575c-.855-1.352-2.122-1.723-2.249-1.914-.284-.431-.269-1.79-.127-2.518.083-.424.334-1.677.579-2.819l-1.493 1.145s-.583 2.202-.645 2.506c-.076.368-.34.988-.594.936-.314-.066-.59-.287-.52-.813l.49-3.293c.079-.244.206-.415.409-.532l2.285-1.945c.27-.152.433-.314.877-.314h.845c.55 0 .828.226 1.212 1.097.408.924 1.202 2.612 1.202 2.612z"
+                                                                fill="#9E9B98"></path>
+                                                            <path
+                                                                d="M10.382 14.243 9.826 16.8s-1.439 2.084-1.84 2.668c-.3.438-.526.972-.011 1.361.577.437.927-.067 1.227-.404.316-.403 1.024-1.33 1.816-2.33.21-.265.327-.489.416-.711.06-.15.996-2.745 1.14-3.142h-2.192z"
+                                                                fill="#D2D0CC"></path>
+                                                            <path
+                                                                d="M15.204 9.408c-.213-.547-.575-1.395-.943-1.91-.231 1.038-.872 3.263-.595 3.817.24.48.976-.366 1.407-.933a1 1 0 0 0 .131-.974z"
+                                                                fill="#E3CA3F"></path>
+                                                            <path
+                                                                d="m10.202 13.048 1.04-3.465 1.04-2.425c.23-.116.863-.5 1.417-.223s.874.994.66 1.955c-.23 1.04-.692 3.257-.692 3.811 0 .464.032.347.195.965.108.145.017.563-.163.577h-2.81c-1.125 0-1.033-.587-1.033-.587l.346-.608z"
+                                                                fill="#F8D830"></path>
+                                                            <path
+                                                                d="M10.895 9.93c-.554 0-1.155-1.617-1.386-2.426.462-.23 1.594-.693 2.426-.693.831 0 .808 1.155.692 1.733-.346.461-1.178 1.385-1.732 1.385z"
+                                                                fill="#FFE033"></path>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="">15 – 25 min</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h2 class="text-2xl font-semibold">Tanuks</h2>
+                                        <div class="flex">
+                                            <span class="text-yellow-400 mr-3"><i class="fa-solid fa-star"></i></span>
+                                            <p>4.7 Good $$$</p>
+                                        </div>
+                                        <div class="ml-2 mt-2">
+                                            <div
+                                                class="rounded-2xl bg-gray-200 text-xs py-[6px] px-4 relative inline-block">
+                                                <div
+                                                    class="text-white bg-green-500 w-7 h-7 rounded-full flex items-center justify-center absolute -top-[5px] -left-[5px]">
+                                                    <i class="fa-solid fa-gift"></i>
+                                                </div>
+                                                <span class="ml-4">Dish as a gift</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="hidden md:block">
+                                <div class="swiper-button-next h-12 w-12 bg-white text-black shadow-lg rounded-full">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </div>
+                                <div class="swiper-button-prev h-12 w-12 bg-white text-black shadow-lg rounded-full">
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="my-6 px-5 md:px-0 flex items-center justify-between">
+                    <div class="flex">
+                        <h2 class="font-bold text-2xl">All restaurant</h2>
+                    </div>
+                </div>
+                <div>
+                    <div class="px-5 md:px-0 grid grid-cols-3 gap-5">
+                        <a v-for="i in 60" href="">
+                            <div
+                                class="bg-[url('https://eda.yandex.ru/images/3521394/ecbca3a010132c4f6a6667c30d685834-450x300.jpg')] bg-cover bg-center rounded-3xl h-64 relative">
+                                <div class=" absolute left-0 top-0 p-3">
+                                    <div class="text-base font-bold px-3 py-2 rounded-3xl bg-[#fae098cc] flex">
+                                        <div class="">-14% with START14</div>
+                                    </div>
+                                </div>
+                                <div class=" absolute right-0 bottom-0">
+                                    <div
+                                        class="text-base font-bold px-3 py-2 rounded-3xl bg-[#00000099] text-white flex">
+                                        <div class="mr-2">
+                                            <svg width="1em" height="1em" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                                class="UiKitUiKitIcon_m UiKitUiKitIcon_root Corner_icon">
+                                                <path d="M13.935 3a1.732 1.732 0 1 0 0 3.465 1.732 1.732 0 0 0 0-3.465z"
+                                                    fill="#D2D0CC">
+                                                </path>
+                                                <path
+                                                    d="M8.999 5.248H7.714c-.46 0-.873.28-1.044.707L5.08 9.93a1.125 1.125 0 0 0 .52 1.412l4.726 2.338 1.686-5.62.269-.902 1.418.901V6.935l-2.186-1.093a5.622 5.622 0 0 0-2.514-.594z"
+                                                    fill="#FFE033"></path>
+                                                <path
+                                                    d="M15.408 10.867s2.153 1.266 2.49 1.42c.308.141.65.42.445.784-.206.363-.717.293-1.128.11-.464-.208-1.99-.901-2.304-1.074-.268-.148-.368-.206-.466-.358-.204-.318-.6-.88-.6-.88l-.708 2.812s1.109 1.336 2.024 2.89l1.349 2.731c.289.49.833 1.223.313 1.512-.622.346-1.027.06-1.472-.52l-2.214-3.575c-.855-1.352-2.122-1.723-2.249-1.914-.284-.431-.269-1.79-.127-2.518.083-.424.334-1.677.579-2.819l-1.493 1.145s-.583 2.202-.645 2.506c-.076.368-.34.988-.594.936-.314-.066-.59-.287-.52-.813l.49-3.293c.079-.244.206-.415.409-.532l2.285-1.945c.27-.152.433-.314.877-.314h.845c.55 0 .828.226 1.212 1.097.408.924 1.202 2.612 1.202 2.612z"
+                                                    fill="#9E9B98"></path>
+                                                <path
+                                                    d="M10.382 14.243 9.826 16.8s-1.439 2.084-1.84 2.668c-.3.438-.526.972-.011 1.361.577.437.927-.067 1.227-.404.316-.403 1.024-1.33 1.816-2.33.21-.265.327-.489.416-.711.06-.15.996-2.745 1.14-3.142h-2.192z"
+                                                    fill="#D2D0CC"></path>
+                                                <path
+                                                    d="M15.204 9.408c-.213-.547-.575-1.395-.943-1.91-.231 1.038-.872 3.263-.595 3.817.24.48.976-.366 1.407-.933a1 1 0 0 0 .131-.974z"
+                                                    fill="#E3CA3F"></path>
+                                                <path
+                                                    d="m10.202 13.048 1.04-3.465 1.04-2.425c.23-.116.863-.5 1.417-.223s.874.994.66 1.955c-.23 1.04-.692 3.257-.692 3.811 0 .464.032.347.195.965.108.145.017.563-.163.577h-2.81c-1.125 0-1.033-.587-1.033-.587l.346-.608z"
+                                                    fill="#F8D830"></path>
+                                                <path
+                                                    d="M10.895 9.93c-.554 0-1.155-1.617-1.386-2.426.462-.23 1.594-.693 2.426-.693.831 0 .808 1.155.692 1.733-.346.461-1.178 1.385-1.732 1.385z"
+                                                    fill="#FFE033"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="">15 – 25 min</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h2 class="text-2xl font-semibold">Vesuvius</h2>
+                            <div class="flex">
+                                <span class="text-green-400 mr-3"><i class="fa-solid fa-star"></i></span>
+                                <p>4.7 Good $$$</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products end -->
+        </main>
+    </div>
+
+    <!-- footer start -->
+    <footer class="md:bg-slate-100 bg-gray-800 text-white md:text-gray-500 py-10 px-5">
+        <div class="md:flex justify-between items-center border-b pb-5">
+            <img src="/images/LavkaLogo.svg" alt="">
+            <div class="flex items-center gap-2">
+                <img src="/images/AppStore.svg" alt="">
+                <img src="/images/GooglePlay.svg" alt="">
+            </div>
+        </div>
+        <div class="md:flex items-center border-b py-5">
+            <ul class="font-semibold md:w-80">
+                <li class="my-1">Что продаем</li>
+                <li class="my-1">Что продаем</li>
+                <li class="my-1">Что продаем</li>
+            </ul>
+            <ul class="font-semibold md:w-80">
+                <li class="my-1">Что продаем</li>
+                <li class="my-1">Что продаем</li>
+                <li class="my-1">Что продаем</li>
+            </ul>
+            <ul class="font-semibold md:w-80">
+                <li class="my-1">Что продаем</li>
+                <li class="my-1">Что продаем</li>
+                <li class="my-1">Что продаем</li>
+            </ul>
+        </div>
+        <div class="md:flex justify-between items-center pt-5">
+            <div class="font-semibold md:flex items-center">
+                <div class="mr-2">© 2023 ООО «Яндекс.Лавка»</div>
+                <span>.</span>
+                <div class="mx-2">Ссылка на внешний сайт</div>
+                <span>.</span>
+                <div class="mx-2">Пресс-служба</div>
+            </div>
+            <div class="font-semibold flex items-center">
+                <span>Проект Яндекса</span>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+    <script>
+        var app = new Vue({
+            el: '#app'
+        });
+    </script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 3,
+            spaceBetween: 10,
+            grabCursor: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                480: {
+                    slidesPerView: 5,
+                },
+            }
+        });
+        var swiper = new Swiper(".top-slide", {
+            slidesPerView: 5,
+            spaceBetween: 15,
+            grabCursor: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+        var swiper = new Swiper(".mobile-hero", {
+            spaceBetween: 30,
+            pagination: {
+                el: ".swiper-pagination",
+            },
+        });
+        var swiper = new Swiper(".mobileMenu", {
+            pagination: {
+                el: ".swiper-pagination",
+                dynamicBullets: true,
+            },
+        });
+    </script>
+    <script src="main.js"></script>
+</body>
+
+</html>
