@@ -67,7 +67,8 @@
                     <div class="py-2 px-5 hover:bg-gray-100 transition-all cursor-pointer">Option 4</div>
                 </div>
             </div>
-            <button class="p-3 rounded-2xl relative flex items-center ml-4 bg-gray-100 hover:bg-gray-200 transition-all whitespace-nowrap">
+            <button
+                class="p-3 rounded-2xl relative flex items-center ml-4 bg-gray-100 hover:bg-gray-200 transition-all whitespace-nowrap">
                 <span class="mr-2"><i class="fa-solid fa-map-pin"></i></span>
                 Specify delivery address
                 <span class="ml-2"><i class="fa-solid fa-chevron-down"></i></span>
@@ -98,15 +99,17 @@
             <h2 class="font-bold text-base">Pyryeva Street 5Ac2</h2>
         </div>
         <div>
-            <button class="text-sm font-bold bg-pink-500 rounded-3xl px-2 text-white">Plus</button>
+            <button
+                class="text-sm font-bold bg-gradient-to-br from-red-500 via-purple-500 to-blue-500 rounded-3xl px-2 text-white">Plus</button>
         </div>
     </nav>
     <!-- drawer component -->
     <div id="drawer-navigation" style="transform: translateX(-100%);"
-        class="fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform bg-white w-80"
-        tabindex="-1" aria-labelledby="drawer-navigation-label">
+        class="fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform bg-white w-80" tabindex="-1"
+        aria-labelledby="drawer-navigation-label">
         <img src="https://avatars.mds.yandex.net/get-bunker/994123/62e784df90b806d5d740ef444a393b528f3226bc/svg" alt="">
-        <button type="button" onclick="openMenu()" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation"
+        <button type="button" onclick="openMenu()" data-drawer-hide="drawer-navigation"
+            aria-controls="drawer-navigation"
             class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center">
             <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg">
@@ -123,36 +126,31 @@
             </div>
             <ul class="font-medium">
                 <li class="border-t py-2">
-                    <a href="#"
-                        class="flex items-center p-2 text-gray-900">
+                    <a href="#" class="flex items-center p-2 text-gray-900">
                         <span><i class="fa-solid fa-cart-shopping"></i></span>
                         <span class="ml-3">Dashboard</span>
                     </a>
                 </li>
                 <li class="border-t py-2">
-                    <a href="#"
-                        class="flex items-center p-2 text-gray-900">
+                    <a href="#" class="flex items-center p-2 text-gray-900">
                         <span><i class="fa-solid fa-cart-shopping"></i></span>
                         <span class="ml-3">Dashboard</span>
                     </a>
                 </li>
                 <li class="border-t py-2">
-                    <a href="#"
-                        class="flex items-center p-2 text-gray-900">
+                    <a href="#" class="flex items-center p-2 text-gray-900">
                         <span><i class="fa-solid fa-cart-shopping"></i></span>
                         <span class="ml-3">Dashboard</span>
                     </a>
                 </li>
                 <li class="border-t py-2">
-                    <a href="#"
-                        class="flex items-center p-2 text-gray-900">
+                    <a href="#" class="flex items-center p-2 text-gray-900">
                         <span><i class="fa-solid fa-cart-shopping"></i></span>
                         <span class="ml-3">Dashboard</span>
                     </a>
                 </li>
                 <li class="border-t py-2">
-                    <a href="#"
-                        class="flex items-center p-2 text-gray-900">
+                    <a href="#" class="flex items-center p-2 text-gray-900">
                         <span><i class="fa-solid fa-cart-shopping"></i></span>
                         <span class="ml-3">Dashboard</span>
                     </a>
@@ -162,170 +160,139 @@
     </div>
 
     <!-- navbar end -->
-    <div class="container mx-auto flex pb-5" id="app">
-        <main class="w-full">
-
-            <!-- hero start -->
-            <div class="px-5 mt-5 md:hidden">
-                <div class="flex justify-between bg-gray-200 p-4 rounded-3xl">
-                    <p class="font-bold text-base">search eats</p>
-                    <span><i class="fa-solid fa-magnifying-glass"></i></span>
-                </div>
-            </div>
-            <div class="px-5 mt-5 md:hidden">
-                <div class="rounded-3xl overflow-hidden">
-                    <img src="https://avatars.mds.yandex.net/get-feeds-media/3752156/cde73d13e832dc107518e1b6d6f835d1a2f6cbaa/media-984-312"
-                        alt="">
-                </div>
-            </div>
-            <div class="mt-5">
-                <div class="overflow-hidden px-5 md:px-0">
-                    <div class="my-6 flex items-center justify-between">
-                        <div class="flex">
-                            <h2 class="font-bold text-4xl">Grocery</h2>
-                        </div>
-                        <div class="px-3 py-2 rounded-xl cursor-pointer bg-gray-100 hover:bg-gray-200 transition-all">
-                            All <span><i class="fa-solid fa-chevron-right"></i></span>
+    <!-- filter box -->
+    <div id="app">
+        <div class="bg-[#0000004d] z-40 w-full pt-10">
+            <div class="flex flex-col justify-end">
+                <div class="bg-gray-200 ">
+                    <div class="p-5 rounded-3xl bg-white ">
+                        <h2 class="font-bold text-2xl">Grocery</h2>
+                        <div class="bg-yellow-300 rounded-3xl flex justify-between p-3 mt-4">
+                            <div>30</div>
+                            <div>60</div>
                         </div>
                     </div>
-                    <div class="swiper top-slide hidden md:block">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide" v-for="i in 10">
-                                <a href="">
-                                    <div
-                                        class="bg-[url('https://eda.yandex/images/3583740/fa56a27eb64f48c689efb424c5f7b80d-600x450.png')] bg-cover bg-center rounded-3xl h-36">
-                                        <div class=" absolute right-0 bottom-0">
-                                            <div
-                                                class="text-base font-bold px-3 py-2 rounded-3xl bg-[#00000099] text-white flex">
-                                                <div class="mr-2">
-                                                    <svg width="1em" height="1em" fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        class="UiKitUiKitIcon_m UiKitUiKitIcon_root Corner_icon">
-                                                        <path
-                                                            d="M13.935 3a1.732 1.732 0 1 0 0 3.465 1.732 1.732 0 0 0 0-3.465z"
-                                                            fill="#D2D0CC"></path>
-                                                        <path
-                                                            d="M8.999 5.248H7.714c-.46 0-.873.28-1.044.707L5.08 9.93a1.125 1.125 0 0 0 .52 1.412l4.726 2.338 1.686-5.62.269-.902 1.418.901V6.935l-2.186-1.093a5.622 5.622 0 0 0-2.514-.594z"
-                                                            fill="#FFE033"></path>
-                                                        <path
-                                                            d="M15.408 10.867s2.153 1.266 2.49 1.42c.308.141.65.42.445.784-.206.363-.717.293-1.128.11-.464-.208-1.99-.901-2.304-1.074-.268-.148-.368-.206-.466-.358-.204-.318-.6-.88-.6-.88l-.708 2.812s1.109 1.336 2.024 2.89l1.349 2.731c.289.49.833 1.223.313 1.512-.622.346-1.027.06-1.472-.52l-2.214-3.575c-.855-1.352-2.122-1.723-2.249-1.914-.284-.431-.269-1.79-.127-2.518.083-.424.334-1.677.579-2.819l-1.493 1.145s-.583 2.202-.645 2.506c-.076.368-.34.988-.594.936-.314-.066-.59-.287-.52-.813l.49-3.293c.079-.244.206-.415.409-.532l2.285-1.945c.27-.152.433-.314.877-.314h.845c.55 0 .828.226 1.212 1.097.408.924 1.202 2.612 1.202 2.612z"
-                                                            fill="#9E9B98"></path>
-                                                        <path
-                                                            d="M10.382 14.243 9.826 16.8s-1.439 2.084-1.84 2.668c-.3.438-.526.972-.011 1.361.577.437.927-.067 1.227-.404.316-.403 1.024-1.33 1.816-2.33.21-.265.327-.489.416-.711.06-.15.996-2.745 1.14-3.142h-2.192z"
-                                                            fill="#D2D0CC"></path>
-                                                        <path
-                                                            d="M15.204 9.408c-.213-.547-.575-1.395-.943-1.91-.231 1.038-.872 3.263-.595 3.817.24.48.976-.366 1.407-.933a1 1 0 0 0 .131-.974z"
-                                                            fill="#E3CA3F"></path>
-                                                        <path
-                                                            d="m10.202 13.048 1.04-3.465 1.04-2.425c.23-.116.863-.5 1.417-.223s.874.994.66 1.955c-.23 1.04-.692 3.257-.692 3.811 0 .464.032.347.195.965.108.145.017.563-.163.577h-2.81c-1.125 0-1.033-.587-1.033-.587l.346-.608z"
-                                                            fill="#F8D830"></path>
-                                                        <path
-                                                            d="M10.895 9.93c-.554 0-1.155-1.617-1.386-2.426.462-.23 1.594-.693 2.426-.693.831 0 .808 1.155.692 1.733-.346.461-1.178 1.385-1.732 1.385z"
-                                                            fill="#FFE033"></path>
-                                                    </svg>
-                                                </div>
-                                                <div class="">15 – 25 min</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
+                    <div class="p-5 rounded-3xl bg-white mt-2">
+                        <h2 class="font-bold text-2xl">Specials</h2>
+                        <div class="mt-2 flex gap-2">
+                            <div class="bg-gray-200 rounded-2xl flex items-center p-2">
+                                <img class="h-5 mr-2" src="https://eda.yandex.ru/files/bdu/filters/top/icon.png" alt="">
+                                Top
                             </div>
-                        </div>
-                        <div class="swiper-pagination relative my-5"></div>
-                    </div>
-                    <div class="swiper mobileMenu md:hidden">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide" v-for="i in 10">
-                                <div class="grid grid-cols-3 gap-2">
-                                    <a href="" v-for="i in 3">
-                                        <div
-                                            class="bg-[url('https://avatars.mds.yandex.net/get-feeds-media/3740653/d5e04bfbf53223be207b85d3eaabf9e92afda83d/media-312-312')] bg-cover bg-center p-2 rounded-2xl h-28">
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-pagination relative mt-5"></div>
-                    </div>
-                </div>
-                <!-- mobile menu slider -->
-            </div>
-            <!-- brands -->
-            <div class="mx-5 mt-5">
-                <div class="swiper mobileMenu md:hidden">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide" v-for="i in 3">
-                            <div class="grid grid-cols-4 gap-2">
-                                <div class="flex flex-col items-center" v-for="i in 4">
-                                    <div class="w-14">
-                                        <img src="https://eda.yandex.ru/files/bdu/buttons/retail/lavka.png" alt="">
-                                    </div>
-                                    <p class="text-xs">Yandex.Lavka</p>
-                                    <p class="text-xs text-gray-400">40-45 min</p>
-                                </div>
+                            <div class="bg-gray-200 rounded-2xl flex items-center p-2">
+                                <img class="h-5 mr-2" src="https://eda.yandex.ru/files/bdu/filters/top/icon.png" alt="">
+                                Top
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="mx-5 mt-5">
-                <div class="swiper restaurant md:hidden">
-                    <div class="my-6 flex items-center justify-between">
-                        <div class="flex">
-                            <h2 class="font-bold text-2xl">restaurants</h2>
-                        </div>
-                    </div>
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="flex flex-col items-center">
-                                <div
-                                    class="w-14 h-14 rounded-2xl bg-gray-200 flex items-center justify-center text-2xl">
-                                    <i class="fa-solid fa-sliders"></i>
-                                </div>
-                                <p class="text-xs">Filter</p>
+                    <div class="p-5 rounded-3xl bg-white mt-2">
+                        <h2 class="font-bold text-2xl">Discount</h2>
+                        <div class="mt-2 flex gap-2">
+                            <div class="bg-gray-200 rounded-2xl flex items-center p-2">
+                                <img class="h-5 mr-2" src="https://eda.yandex.ru/files/bdu/filters/top/icon.png" alt="">
+                                Top
+                            </div>
+                            <div class="bg-gray-200 rounded-2xl flex items-center p-2">
+                                <img class="h-5 mr-2" src="https://eda.yandex.ru/files/bdu/filters/top/icon.png" alt="">
+                                Top
                             </div>
                         </div>
-                        <div class="swiper-slide" v-for="i in 6">
-                            <div class="flex flex-col items-center">
-                                <div class="w-14">
-                                    <img src="https://eda.yandex/images/3436037/073b33b4861631c7466731ce3b324278.png"
+                    </div>
+                    <div class="p-5 rounded-3xl bg-white mt-2">
+                        <h2 class="font-bold text-2xl">Cuisines and dishes</h2>
+                        <div class="grid grid-cols-4 gap-2 mt-2">
+                            <a href="edaM.html" class="flex flex-col items-center" v-for="i in 16">
+                                <div>
+                                    <img src="https://eda.yandex.ru/images/3337779/cd7ad1df88406dec28bc8ad984ae76d0-300x300.png"
                                         alt="">
                                 </div>
-                                <p class="text-xs">Carry Out</p>
-                            </div>
+                                <p class="text-xs">Burgers</p>
+                            </a>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="flex flex-col items-center">
-                                <div
-                                    class="w-14 h-14 rounded-2xl bg-gray-200 flex items-center justify-center text-2xl">
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </div>
-                                <p class="text-xs">More</p>
+                    </div>
+                    <div class="p-5 rounded-3xl bg-white mt-2">
+                        <h2 class="font-bold text-2xl">Food mals</h2>
+                        <div class="mt-2 flex flex-wrap gap-2">
+                            <div class="bg-gray-200 rounded-2xl flex items-center p-2">
+                                Balchuk
+                            </div>
+                            <div class="bg-gray-200 rounded-2xl flex items-center p-2">
+                                Maroseika
+                            </div>
+                            <div class="bg-gray-200 rounded-2xl flex items-center p-2">
+                                Angara
+                            </div>
+                            <div class="bg-gray-200 rounded-2xl flex items-center p-2">
+                                Krasnaya Roza
+                            </div>
+                            <div class="bg-gray-200 rounded-2xl flex items-center p-2">
+                                Cheremushki Market
+                            </div>
+                            <div class="bg-gray-200 rounded-2xl flex items-center p-2">
+                                Around the World
+                            </div>
+                            <div class="bg-gray-200 rounded-2xl flex items-center p-2">
+                                Depo
                             </div>
                         </div>
                     </div>
+                    <div class="p-5 rounded-3xl bg-white mt-2">
+                        <h2 class="font-bold text-2xl">Show First</h2>
+                        <div class="text-gray-900 divide-y divide-gray-200 mt-2">
+                            <div class="flex pb-3 justify-between">
+                                <div class="">Default</div>
+                                <div class="h-8 w-8 bg-yellow-300 rounded-full flex items-center justify-center">
+                                    <div class="h-4 w-4 bg-white rounded-full"></div>
+                                </div>
+                            </div>
+                            <div class="flex py-3 justify-between">
+                                <div class="">High rating</div>
+                                <div class="h-8 w-8 bg-gray-200 rounded-full flex items-center justify-center">
+                                    <div class="h-4 w-4 bg-white rounded-full"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-5 bg-white border-t fixed bottom-0 w-full">
+                    <button class="bg-yellow-300 p-3 w-full rounded-3xl">Apply</button>
                 </div>
             </div>
-            <div>
-                <div class="my-6 px-5 md:px-0 flex items-center justify-between">
-                    <div class="flex">
-                        <h2 class="font-bold text-2xl">Offers</h2>
+        </div>
+        <div class="container mx-auto flex pb-5" id="app">
+            <main class="w-full">
+        
+                <!-- hero start -->
+                <div class="px-5 mt-5 md:hidden">
+                    <a href="search.html">
+                        <div class="flex justify-between bg-gray-200 p-4 rounded-3xl">
+                            <p class="font-bold text-base">search eats</p>
+                            <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                        </div>
+                    </a>
+                </div>
+                <div class="px-5 mt-5 md:hidden">
+                    <div class="rounded-3xl overflow-hidden">
+                        <img src="https://avatars.mds.yandex.net/get-feeds-media/3752156/cde73d13e832dc107518e1b6d6f835d1a2f6cbaa/media-984-312"
+                            alt="">
                     </div>
                 </div>
-                <div>
+                <div class="mt-5">
                     <div class="overflow-hidden px-5 md:px-0">
+                        <div class="my-6 flex items-center justify-between">
+                            <div class="flex">
+                                <h2 class="font-bold text-4xl">Grocery</h2>
+                            </div>
+                            <div class="px-3 py-2 rounded-xl cursor-pointer bg-gray-100 hover:bg-gray-200 transition-all">
+                                All <span><i class="fa-solid fa-chevron-right"></i></span>
+                            </div>
+                        </div>
                         <div class="swiper top-slide hidden md:block">
                             <div class="swiper-wrapper">
-                                <div v-for="i in 10" class="swiper-slide">
+                                <div class="swiper-slide" v-for="i in 10">
                                     <a href="">
                                         <div
-                                            class="bg-[url('https://eda.yandex.ru/images/2353725/d04329b4df086d34e028849ec58673ba-450x300.jpg')] bg-cover bg-center rounded-3xl h-36 relative">
-                                            <div class=" absolute left-0 top-0 p-3">
-                                                <div
-                                                    class="text-base font-bold px-3 py-2 rounded-3xl bg-[#fae098cc] flex">
-                                                    <div class="">-14% with START14</div>
-                                                </div>
-                                            </div>
+                                            class="bg-[url('https://eda.yandex/images/3583740/fa56a27eb64f48c689efb424c5f7b80d-600x450.png')] bg-cover bg-center rounded-3xl h-36">
                                             <div class=" absolute right-0 bottom-0">
                                                 <div
                                                     class="text-base font-bold px-3 py-2 rounded-3xl bg-[#00000099] text-white flex">
@@ -335,8 +302,7 @@
                                                             class="UiKitUiKitIcon_m UiKitUiKitIcon_root Corner_icon">
                                                             <path
                                                                 d="M13.935 3a1.732 1.732 0 1 0 0 3.465 1.732 1.732 0 0 0 0-3.465z"
-                                                                fill="#D2D0CC">
-                                                            </path>
+                                                                fill="#D2D0CC"></path>
                                                             <path
                                                                 d="M8.999 5.248H7.714c-.46 0-.873.28-1.044.707L5.08 9.93a1.125 1.125 0 0 0 .52 1.412l4.726 2.338 1.686-5.62.269-.902 1.418.901V6.935l-2.186-1.093a5.622 5.622 0 0 0-2.514-.594z"
                                                                 fill="#FFE033"></path>
@@ -361,32 +327,10 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <h2 class="text-2xl font-semibold">Tanuks</h2>
-                                        <div class="flex">
-                                            <span class="text-yellow-400 mr-3"><i class="fa-solid fa-star"></i></span>
-                                            <p>4.7 Good $$$</p>
-                                        </div>
-                                        <div class="ml-2 mt-2">
-                                            <div
-                                                class="rounded-2xl bg-gray-200 text-xs py-[6px] px-4 relative inline-block">
-                                                <div
-                                                    class="text-white bg-green-500 w-7 h-7 rounded-full flex items-center justify-center absolute -top-[5px] -left-[5px]">
-                                                    <i class="fa-solid fa-gift"></i>
-                                                </div>
-                                                <span class="ml-4">Dish as a gift</span>
-                                            </div>
-                                        </div>
                                     </a>
                                 </div>
                             </div>
-                            <div class="hidden md:block">
-                                <div class="swiper-button-next h-12 w-12 bg-white text-black shadow-lg rounded-full">
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </div>
-                                <div class="swiper-button-prev h-12 w-12 bg-white text-black shadow-lg rounded-full">
-                                    <i class="fa-solid fa-arrow-left"></i>
-                                </div>
-                            </div>
+                            <div class="swiper-pagination relative my-5"></div>
                         </div>
                         <div class="swiper mobileMenu md:hidden">
                             <div class="swiper-wrapper">
@@ -394,7 +338,7 @@
                                     <div class="grid grid-cols-3 gap-2">
                                         <a href="" v-for="i in 3">
                                             <div
-                                                class="bg-[url('https://avatars.mds.yandex.net/get-feeds-media/3740653/c0112323972f37dfeec77c860149c744a66f0bad/media-312-312')] bg-cover bg-center p-2 rounded-2xl h-28">
+                                                class="bg-[url('https://avatars.mds.yandex.net/get-feeds-media/3740653/d5e04bfbf53223be207b85d3eaabf9e92afda83d/media-312-312')] bg-cover bg-center p-2 rounded-2xl h-28">
                                             </div>
                                         </a>
                                     </div>
@@ -403,69 +347,224 @@
                             <div class="swiper-pagination relative mt-5"></div>
                         </div>
                     </div>
+                    <!-- mobile menu slider -->
                 </div>
-            </div>
-            <div>
-                <div class="my-6 px-5 md:px-0 flex items-center justify-between">
-                    <div class="flex">
-                        <h2 class="font-bold text-2xl">All restaurant</h2>
+                <!-- brands -->
+                <div class="mx-5 mt-5">
+                    <div class="swiper mobileMenu md:hidden">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" v-for="i in 3">
+                                <div class="grid grid-cols-4 gap-2">
+                                    <a href="edaM.html" class="flex flex-col items-center" v-for="i in 4">
+                                        <div class="w-14">
+                                            <img src="https://eda.yandex.ru/files/bdu/buttons/retail/lavka.png" alt="">
+                                        </div>
+                                        <p class="text-xs">Yandex.Lavka</p>
+                                        <p class="text-xs text-gray-400">40-45 min</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mx-5 mt-5">
+                    <div class="swiper restaurant md:hidden">
+                        <div class="my-6 flex items-center justify-between">
+                            <div class="flex">
+                                <h2 class="font-bold text-2xl">restaurants</h2>
+                            </div>
+                        </div>
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-14 h-14 rounded-2xl bg-gray-200 flex items-center justify-center text-2xl">
+                                        <i class="fa-solid fa-sliders"></i>
+                                    </div>
+                                    <p class="text-xs">Filter</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide" v-for="i in 6">
+                                <a href="" class="flex flex-col items-center">
+                                    <div class="w-14">
+                                        <img src="https://eda.yandex/images/3436037/073b33b4861631c7466731ce3b324278.png"
+                                            alt="">
+                                    </div>
+                                    <p class="text-xs">Carry Out</p>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-14 h-14 rounded-2xl bg-gray-200 flex items-center justify-center text-2xl">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </div>
+                                    <p class="text-xs">More</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div>
-                    <div class="px-5 md:px-0 grid md:grid-cols-3 gap-5">
-                        <a v-for="i in 60" href="">
-                            <div
-                                class="bg-[url('https://eda.yandex.ru/images/3521394/ecbca3a010132c4f6a6667c30d685834-450x300.jpg')] bg-cover bg-center rounded-3xl h-64 relative">
-                                <div class=" absolute left-0 top-0 p-3">
-                                    <div class="text-base font-bold px-3 py-2 rounded-3xl bg-[#fae098cc] flex">
-                                        <div class="">-14% with START14</div>
+                    <div class="my-6 px-5 md:px-0 flex items-center justify-between">
+                        <div class="flex">
+                            <h2 class="font-bold text-2xl">Offers</h2>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="overflow-hidden px-5 md:px-0">
+                            <div class="swiper top-slide hidden md:block">
+                                <div class="swiper-wrapper">
+                                    <div v-for="i in 10" class="swiper-slide">
+                                        <a href="">
+                                            <div
+                                                class="bg-[url('https://eda.yandex.ru/images/2353725/d04329b4df086d34e028849ec58673ba-450x300.jpg')] bg-cover bg-center rounded-3xl h-36 relative">
+                                                <div class=" absolute left-0 top-0 p-3">
+                                                    <div class="text-base font-bold px-3 py-2 rounded-3xl bg-[#fae098cc] flex">
+                                                        <div class="">-14% with START14</div>
+                                                    </div>
+                                                </div>
+                                                <div class=" absolute right-0 bottom-0">
+                                                    <div
+                                                        class="text-base font-bold px-3 py-2 rounded-3xl bg-[#00000099] text-white flex">
+                                                        <div class="mr-2">
+                                                            <svg width="1em" height="1em" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                class="UiKitUiKitIcon_m UiKitUiKitIcon_root Corner_icon">
+                                                                <path
+                                                                    d="M13.935 3a1.732 1.732 0 1 0 0 3.465 1.732 1.732 0 0 0 0-3.465z"
+                                                                    fill="#D2D0CC">
+                                                                </path>
+                                                                <path
+                                                                    d="M8.999 5.248H7.714c-.46 0-.873.28-1.044.707L5.08 9.93a1.125 1.125 0 0 0 .52 1.412l4.726 2.338 1.686-5.62.269-.902 1.418.901V6.935l-2.186-1.093a5.622 5.622 0 0 0-2.514-.594z"
+                                                                    fill="#FFE033"></path>
+                                                                <path
+                                                                    d="M15.408 10.867s2.153 1.266 2.49 1.42c.308.141.65.42.445.784-.206.363-.717.293-1.128.11-.464-.208-1.99-.901-2.304-1.074-.268-.148-.368-.206-.466-.358-.204-.318-.6-.88-.6-.88l-.708 2.812s1.109 1.336 2.024 2.89l1.349 2.731c.289.49.833 1.223.313 1.512-.622.346-1.027.06-1.472-.52l-2.214-3.575c-.855-1.352-2.122-1.723-2.249-1.914-.284-.431-.269-1.79-.127-2.518.083-.424.334-1.677.579-2.819l-1.493 1.145s-.583 2.202-.645 2.506c-.076.368-.34.988-.594.936-.314-.066-.59-.287-.52-.813l.49-3.293c.079-.244.206-.415.409-.532l2.285-1.945c.27-.152.433-.314.877-.314h.845c.55 0 .828.226 1.212 1.097.408.924 1.202 2.612 1.202 2.612z"
+                                                                    fill="#9E9B98"></path>
+                                                                <path
+                                                                    d="M10.382 14.243 9.826 16.8s-1.439 2.084-1.84 2.668c-.3.438-.526.972-.011 1.361.577.437.927-.067 1.227-.404.316-.403 1.024-1.33 1.816-2.33.21-.265.327-.489.416-.711.06-.15.996-2.745 1.14-3.142h-2.192z"
+                                                                    fill="#D2D0CC"></path>
+                                                                <path
+                                                                    d="M15.204 9.408c-.213-.547-.575-1.395-.943-1.91-.231 1.038-.872 3.263-.595 3.817.24.48.976-.366 1.407-.933a1 1 0 0 0 .131-.974z"
+                                                                    fill="#E3CA3F"></path>
+                                                                <path
+                                                                    d="m10.202 13.048 1.04-3.465 1.04-2.425c.23-.116.863-.5 1.417-.223s.874.994.66 1.955c-.23 1.04-.692 3.257-.692 3.811 0 .464.032.347.195.965.108.145.017.563-.163.577h-2.81c-1.125 0-1.033-.587-1.033-.587l.346-.608z"
+                                                                    fill="#F8D830"></path>
+                                                                <path
+                                                                    d="M10.895 9.93c-.554 0-1.155-1.617-1.386-2.426.462-.23 1.594-.693 2.426-.693.831 0 .808 1.155.692 1.733-.346.461-1.178 1.385-1.732 1.385z"
+                                                                    fill="#FFE033"></path>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="">15 – 25 min</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h2 class="text-2xl font-semibold">Tanuks</h2>
+                                            <div class="flex">
+                                                <span class="text-yellow-400 mr-3"><i class="fa-solid fa-star"></i></span>
+                                                <p>4.7 Good $$$</p>
+                                            </div>
+                                            <div class="ml-2 mt-2">
+                                                <div
+                                                    class="rounded-2xl bg-gray-200 text-xs py-[6px] px-4 relative inline-block">
+                                                    <div
+                                                        class="text-white bg-green-500 w-7 h-7 rounded-full flex items-center justify-center absolute -top-[5px] -left-[5px]">
+                                                        <i class="fa-solid fa-gift"></i>
+                                                    </div>
+                                                    <span class="ml-4">Dish as a gift</span>
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
-                                <div class=" absolute right-0 bottom-0">
-                                    <div
-                                        class="text-base font-bold px-3 py-2 rounded-3xl bg-[#00000099] text-white flex">
-                                        <div class="mr-2">
-                                            <svg width="1em" height="1em" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                                class="UiKitUiKitIcon_m UiKitUiKitIcon_root Corner_icon">
-                                                <path d="M13.935 3a1.732 1.732 0 1 0 0 3.465 1.732 1.732 0 0 0 0-3.465z"
-                                                    fill="#D2D0CC">
-                                                </path>
-                                                <path
-                                                    d="M8.999 5.248H7.714c-.46 0-.873.28-1.044.707L5.08 9.93a1.125 1.125 0 0 0 .52 1.412l4.726 2.338 1.686-5.62.269-.902 1.418.901V6.935l-2.186-1.093a5.622 5.622 0 0 0-2.514-.594z"
-                                                    fill="#FFE033"></path>
-                                                <path
-                                                    d="M15.408 10.867s2.153 1.266 2.49 1.42c.308.141.65.42.445.784-.206.363-.717.293-1.128.11-.464-.208-1.99-.901-2.304-1.074-.268-.148-.368-.206-.466-.358-.204-.318-.6-.88-.6-.88l-.708 2.812s1.109 1.336 2.024 2.89l1.349 2.731c.289.49.833 1.223.313 1.512-.622.346-1.027.06-1.472-.52l-2.214-3.575c-.855-1.352-2.122-1.723-2.249-1.914-.284-.431-.269-1.79-.127-2.518.083-.424.334-1.677.579-2.819l-1.493 1.145s-.583 2.202-.645 2.506c-.076.368-.34.988-.594.936-.314-.066-.59-.287-.52-.813l.49-3.293c.079-.244.206-.415.409-.532l2.285-1.945c.27-.152.433-.314.877-.314h.845c.55 0 .828.226 1.212 1.097.408.924 1.202 2.612 1.202 2.612z"
-                                                    fill="#9E9B98"></path>
-                                                <path
-                                                    d="M10.382 14.243 9.826 16.8s-1.439 2.084-1.84 2.668c-.3.438-.526.972-.011 1.361.577.437.927-.067 1.227-.404.316-.403 1.024-1.33 1.816-2.33.21-.265.327-.489.416-.711.06-.15.996-2.745 1.14-3.142h-2.192z"
-                                                    fill="#D2D0CC"></path>
-                                                <path
-                                                    d="M15.204 9.408c-.213-.547-.575-1.395-.943-1.91-.231 1.038-.872 3.263-.595 3.817.24.48.976-.366 1.407-.933a1 1 0 0 0 .131-.974z"
-                                                    fill="#E3CA3F"></path>
-                                                <path
-                                                    d="m10.202 13.048 1.04-3.465 1.04-2.425c.23-.116.863-.5 1.417-.223s.874.994.66 1.955c-.23 1.04-.692 3.257-.692 3.811 0 .464.032.347.195.965.108.145.017.563-.163.577h-2.81c-1.125 0-1.033-.587-1.033-.587l.346-.608z"
-                                                    fill="#F8D830"></path>
-                                                <path
-                                                    d="M10.895 9.93c-.554 0-1.155-1.617-1.386-2.426.462-.23 1.594-.693 2.426-.693.831 0 .808 1.155.692 1.733-.346.461-1.178 1.385-1.732 1.385z"
-                                                    fill="#FFE033"></path>
-                                            </svg>
+                                <div class="hidden md:block">
+                                    <div class="swiper-button-next h-12 w-12 bg-white text-black shadow-lg rounded-full">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </div>
+                                    <div class="swiper-button-prev h-12 w-12 bg-white text-black shadow-lg rounded-full">
+                                        <i class="fa-solid fa-arrow-left"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper mobileMenu md:hidden">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide" v-for="i in 10">
+                                        <div class="grid grid-cols-3 gap-2">
+                                            <a href="" v-for="i in 3">
+                                                <div
+                                                    class="bg-[url('https://avatars.mds.yandex.net/get-feeds-media/3740653/c0112323972f37dfeec77c860149c744a66f0bad/media-312-312')] bg-cover bg-center p-2 rounded-2xl h-28">
+                                                </div>
+                                            </a>
                                         </div>
-                                        <div class="">15 – 25 min</div>
                                     </div>
                                 </div>
+                                <div class="swiper-pagination relative mt-5"></div>
                             </div>
-                            <h2 class="text-2xl font-semibold">Vesuvius</h2>
-                            <div class="flex">
-                                <span class="text-green-400 mr-3"><i class="fa-solid fa-star"></i></span>
-                                <p>4.7 Good $$$</p>
-                            </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Products end -->
-        </main>
+                <div>
+                    <div class="my-6 px-5 md:px-0 flex items-center justify-between">
+                        <div class="flex">
+                            <h2 class="font-bold text-2xl">All restaurant</h2>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="px-5 md:px-0 grid md:grid-cols-3 gap-5">
+                            <a v-for="i in 60" href="resturant.html">
+                                <div
+                                    class="bg-[url('https://eda.yandex.ru/images/3521394/ecbca3a010132c4f6a6667c30d685834-450x300.jpg')] bg-cover bg-center rounded-3xl h-52 relative">
+                                    <div class=" absolute left-0 top-0 p-3 flex justify-between w-full">
+                                        <div class="text-base font-bold px-3 py-2 rounded-3xl bg-[#fae098cc] flex">
+                                            <div class="">-14% with START14</div>
+                                        </div>
+                                        <div class="text-base rounded-full h-10 w-10 bg-white flex items-center justify-center">
+                                            <i class="fa-regular fa-heart"></i>
+                                        </div>
+                                    </div>
+                                    <div class=" absolute right-0 bottom-0">
+                                        <div class="text-base font-bold px-3 py-2 rounded-3xl bg-[#00000099] text-white flex">
+                                            <div class="mr-2">
+                                                <svg width="1em" height="1em" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                                    class="UiKitUiKitIcon_m UiKitUiKitIcon_root Corner_icon">
+                                                    <path d="M13.935 3a1.732 1.732 0 1 0 0 3.465 1.732 1.732 0 0 0 0-3.465z"
+                                                        fill="#D2D0CC">
+                                                    </path>
+                                                    <path
+                                                        d="M8.999 5.248H7.714c-.46 0-.873.28-1.044.707L5.08 9.93a1.125 1.125 0 0 0 .52 1.412l4.726 2.338 1.686-5.62.269-.902 1.418.901V6.935l-2.186-1.093a5.622 5.622 0 0 0-2.514-.594z"
+                                                        fill="#FFE033"></path>
+                                                    <path
+                                                        d="M15.408 10.867s2.153 1.266 2.49 1.42c.308.141.65.42.445.784-.206.363-.717.293-1.128.11-.464-.208-1.99-.901-2.304-1.074-.268-.148-.368-.206-.466-.358-.204-.318-.6-.88-.6-.88l-.708 2.812s1.109 1.336 2.024 2.89l1.349 2.731c.289.49.833 1.223.313 1.512-.622.346-1.027.06-1.472-.52l-2.214-3.575c-.855-1.352-2.122-1.723-2.249-1.914-.284-.431-.269-1.79-.127-2.518.083-.424.334-1.677.579-2.819l-1.493 1.145s-.583 2.202-.645 2.506c-.076.368-.34.988-.594.936-.314-.066-.59-.287-.52-.813l.49-3.293c.079-.244.206-.415.409-.532l2.285-1.945c.27-.152.433-.314.877-.314h.845c.55 0 .828.226 1.212 1.097.408.924 1.202 2.612 1.202 2.612z"
+                                                        fill="#9E9B98"></path>
+                                                    <path
+                                                        d="M10.382 14.243 9.826 16.8s-1.439 2.084-1.84 2.668c-.3.438-.526.972-.011 1.361.577.437.927-.067 1.227-.404.316-.403 1.024-1.33 1.816-2.33.21-.265.327-.489.416-.711.06-.15.996-2.745 1.14-3.142h-2.192z"
+                                                        fill="#D2D0CC"></path>
+                                                    <path
+                                                        d="M15.204 9.408c-.213-.547-.575-1.395-.943-1.91-.231 1.038-.872 3.263-.595 3.817.24.48.976-.366 1.407-.933a1 1 0 0 0 .131-.974z"
+                                                        fill="#E3CA3F"></path>
+                                                    <path
+                                                        d="m10.202 13.048 1.04-3.465 1.04-2.425c.23-.116.863-.5 1.417-.223s.874.994.66 1.955c-.23 1.04-.692 3.257-.692 3.811 0 .464.032.347.195.965.108.145.017.563-.163.577h-2.81c-1.125 0-1.033-.587-1.033-.587l.346-.608z"
+                                                        fill="#F8D830"></path>
+                                                    <path
+                                                        d="M10.895 9.93c-.554 0-1.155-1.617-1.386-2.426.462-.23 1.594-.693 2.426-.693.831 0 .808 1.155.692 1.733-.346.461-1.178 1.385-1.732 1.385z"
+                                                        fill="#FFE033"></path>
+                                                </svg>
+                                            </div>
+                                            <div class="">15 – 25 min</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h2 class="text-2xl font-semibold">Vesuvius</h2>
+                                <div class="flex">
+                                    <span class="text-green-400 mr-3"><i class="fa-solid fa-star"></i></span>
+                                    <p>4.7 Good $$$</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Products end -->
+            </main>
+        </div>
     </div>
 
     <!-- footer start -->
