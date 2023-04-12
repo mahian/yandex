@@ -162,9 +162,9 @@
     <!-- navbar end -->
     <!-- filter box -->
     <div id="app">
-        <div class="bg-[#0000004d] z-40 w-full pt-10">
-            <div class="flex flex-col justify-end">
-                <div class="bg-gray-200 ">
+        <div id="filter-section" class="z-40 w-full h-screen pt-20 fixed bottom-0 transition-all" style="transform: translateY(100%);">
+            <div class="flex flex-col justify-end h-full">
+                <div class="bg-gray-200 h-full overflow-auto rounded-t-3xl">
                     <div class="p-5 rounded-3xl bg-white ">
                         <h2 class="font-bold text-2xl">Grocery</h2>
                         <div class="bg-yellow-300 rounded-3xl flex justify-between p-3 mt-4">
@@ -254,8 +254,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="p-5 bg-white border-t fixed bottom-0 w-full">
-                    <button class="bg-yellow-300 p-3 w-full rounded-3xl">Apply</button>
+                <div class="p-5 bg-white border-t w-full">
+                    <button class="bg-yellow-300 p-3 w-full rounded-3xl" onclick="openFilterBar()">Apply</button>
                 </div>
             </div>
         </div>
@@ -375,7 +375,7 @@
                             </div>
                         </div>
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
+                            <div class="swiper-slide" onclick="openFilterBar()">
                                 <div class="flex flex-col items-center">
                                     <div class="w-14 h-14 rounded-2xl bg-gray-200 flex items-center justify-center text-2xl">
                                         <i class="fa-solid fa-sliders"></i>
