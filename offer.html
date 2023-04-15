@@ -231,29 +231,29 @@
         <main class="w-full overflow-hidden">
             <!--  hero start -->
             <div style="background: linear-gradient(45deg, rgba(0, 0, 0, 0.363), transparent), url('https://eda.yandex.ru/images/3813301/2cf27d8a3be07b29bbc3c41bc1d7d436-800x800.jpg');"
-                class="px-5 pt-32 pb-16 md:rounded-3xl bg-cover md:mt-5 relative">
-                <h2 class="text-4xl text-white font-semibold">Mexican Grandma</h2>
+                class="px-5 pt-32 pb-16 md:rounded-3xl bg-no-repeat bg-cover md:mt-5 relative">
+                <h2 class="text-4xl text-white font-semibold md:text-6xl">Mexican Grandma</h2>
                 <div class="flex gap-2 mt-5">
                     <div class="bg-yellow-50 flex items-center rounded-2xl px-3 py-1">
-                        <span><i class="fa-solid fa-truck"></i></span>
+                        <span class="md:text-2xl"><i class="fa-solid fa-truck"></i></span>
                         <div class="leading-4 ml-2">
-                            <p class="font-semibold ">35-45</p>
-                            <span class="text-xs">min</span>
+                            <p class="font-semibold md:text-2xl">35-45</p>
+                            <span class="text-xs md:text-base">min</span>
                         </div>
                     </div>
                     <div class="bg-yellow-50 flex items-center rounded-2xl px-3 py-1">
-                        <span><i class="fa-solid fa-star"></i></span>
+                        <span class="md:text-2xl"><i class="fa-solid fa-star"></i></span>
                         <div class="leading-4 ml-2">
-                            <p class="font-semibold ">4.8</p>
-                            <span class="text-xs">200+</span>
+                            <p class="font-semibold md:text-2xl">4.8</p>
+                            <span class="text-xs md:text-base">200+</span>
                         </div>
                     </div>
-                    <div class="bg-yellow-50 flex items-center rounded-2xl px-3 py-1">
+                    <div class="bg-yellow-50 flex items-center rounded-2xl px-3 py-1 md:text-2xl px-5">
                         <span><i class="fa-solid fa-ellipsis"></i></span>
                     </div>
                 </div>
                 <div
-                    class="hidden bg-yellow-50 md:flex items-center h-10 w-10 justify-center rounded-full absolute top-5 right-5">
+                    class="hidden bg-yellow-50 md:flex items-center h-16 w-16 text-2xl justify-center rounded-full absolute top-5 right-5">
                     <span><i class="fa-solid fa-heart"></i></span>
                 </div>
             </div>
@@ -321,46 +321,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- modal -->
-            <div id="product-modal"
-                class="z-40 w-full h-screen transition-all fixed top-0 left-0 items-center justify-center bg-[#0000001f] hidden">
-                <div class="w-[600px] bg-white p-5 rounded-3xl">
-                    <div class="">
-                        <div class="flex justify-between">
-                            <h2 class="text-4xl font-bold">Olivier with quail</h2>
-                            <button onclick="openFilterBar()" type="button" class="text-gray-400 bg-transparent h-10 w-10 hover:bg-gray-200 hover:text-gray-900 rounded-lg">
-                                X
-                                <span class="sr-only">Close menu</span>
-                            </button>
-                        </div>
-                        <p class="mt-4">Classic salad arranged by Coffeemania. Seasoned with homemade mayonnaise,
-                            garnished with red
-                            caviar and quail egg</p>
-                    </div>
-                    <div class="">
-                        <h2 class="text-gray-400">ADDITIONALLY</h2>
-                        <div class="mt-4 flex">
-                            <input type="checkbox" class="mr-4">
-                            <span>Without onions</span>
-                            <span class="text-gray-400 ml-4">+ 0 ₽</span>
-                        </div>
-                    </div>
-                    <div class="py-5 bg-white w-full flex justify-between items-center">
-                        <div class="flex gap-2">
-                            <button class="bg-yellow-300 p-3 w-56 rounded-xl" onclick="openFilterBar()">Apply</button>
-                            <button class="border p-3 w-32 rounded-xl flex justify-between">
-                                <span><i class="fa-solid fa-minus"></i></span>
-                                <span>0</span>
-                                <span><i class="fa-solid fa-plus"></i></span>
-                            </button>
-                        </div>
-                        <div class="">
-                            <span class="text-gray-400">Amount</span>
-                            <span>890 ₽</span>
                         </div>
                     </div>
                 </div>

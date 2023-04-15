@@ -48,16 +48,20 @@
     <!-- navbar start  -->
     <nav
         class="hidden md:flex items-center justify-between w-full py-4 px-5 bg-white z-10 border-gray-100 border-b sticky top-0">
-        <div class="flex items-center">
-            <div>
-                <img class="w-[240px]" src="/images/Mlogo.png" alt="">
+        <div class="flex ">
+            <div class="flex items-center">
+                <img class="w-[148px]"
+                    src="https://avatars.mds.yandex.net/get-bunker/994123/62e784df90b806d5d740ef444a393b528f3226bc/svg"
+                    alt="">
             </div>
-            <div id="search-field" class=" p-3 rounded-2xl flex items-center min-w-sm ml-4 bg-gray-100 relative">
-                <input type="search" class="w-full bg-transparent rounded shadow-none outline-none border-0 pl-7"
-                    placeholder="Search by name...">
-                <div class="absolute">
+            <div id="search-field"
+                class="rounded-2xl flex items-center lg:w-[450px] overflow-hidden ml-4 bg-gray-100 border-yellow-300 border-2 relative">
+                <input type="search" class="w-full bg-transparent rounded shadow-none outline-none border-0 pl-10"
+                    placeholder="Search for restaurant and food...">
+                <div class="absolute left-3">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
+                <button class="bg-yellow-300 h-full px-5 font-bold">search</button>
                 <!-- search dropdown inside this input -->
                 <div id="search-dropdown"
                     class="overflow-hidden absolute top-12 left-0 w-full bg-white shadow-lg rounded-3xl text-left hidden whitespace-normal">
@@ -68,10 +72,21 @@
                 </div>
             </div>
             <button
-                class="p-3 rounded-2xl relative flex items-center ml-4 bg-gray-100 hover:bg-gray-200 transition-all whitespace-nowrap">
+                class="group p-3 rounded-2xl font-bold relative flex items-center ml-4 bg-gray-100 hover:bg-gray-200 transition-all whitespace-nowrap">
                 <span class="mr-2"><i class="fa-solid fa-map-pin"></i></span>
                 Specify delivery address
                 <span class="ml-2"><i class="fa-solid fa-chevron-down"></i></span>
+                <!-- dropdown -->
+                <div id="search-dropdown"
+                    class="overflow-hidden absolute top-12 left-0 w-full bg-white shadow-lg rounded-3xl text-left hidden group-focus:block whitespace-normal">
+                    <div onclick="console.log(document.getElementById('select-location').style.display = 'flex');"
+                        class="py-3 px-5 hover:bg-gray-100 transition-all cursor-pointer">
+                        Add new address <span class="ml-3"><i class="fa-solid fa-plus"></i></span>
+                    </div>
+                    <div class="py-3 px-5 hover:bg-gray-100 transition-all cursor-pointer">
+                        Pyryeva Street, 5Ас2 <span class="ml-3"><i class="fa-solid fa-check"></i></span>
+                    </div>
+                </div>
             </button>
         </div>
         <div class="flex items-center">
@@ -86,6 +101,43 @@
             </div>
         </div>
     </nav>
+    <!-- modal -->
+    <div id="select-location"
+        class="z-40 w-full h-screen transition-all fixed top-0 left-0 items-center justify-center bg-[#0000001f] hidden">
+        <div class="md:w-[800px] bg-white p-5 rounded-3xl">
+            <div class="">
+                <div class="flex justify-between">
+                    <h2 class="text-4xl font-bold">Enter delivery address</h2>
+                    <button onclick="openFilterBar()" type="button"
+                        class="text-gray-400 bg-transparent h-10 w-10 hover:bg-gray-200 hover:text-gray-900 rounded-lg">
+                        <i class="fa-solid fa-xmark"></i>
+                        <span class="sr-only">Close menu</span>
+                    </button>
+                </div>
+                <p class="mt-2">Or else how will we know where to deliver?</p>
+                <div class="flex mt-4">
+                    <div id="search-field"
+                        class="rounded-2xl p-3 flex items-center w-full overflow-hidden bg-gray-100 relative mr-3">
+                        <input type="search"
+                            class="w-full bg-transparent rounded shadow-none outline-none border-0 pl-10"
+                            placeholder="Search for restaurant and food...">
+                        <div class="absolute left-3">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                    </div>
+                    <button id="search-field"
+                        class="rounded-2xl bg-yellow-300 flex items-center font-bold px-5 cursor-pointer">
+                        OK
+                    </button>
+                </div>
+                <div class="w-full mt-4"><iframe width="100%" height="350" frameborder="0" scrolling="no"
+                        marginheight="0" marginwidth="0"
+                        src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=1%20Grafton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a
+                            href="https://www.maps.ie/distance-area-calculator.html">measure distance on
+                            map</a></iframe></div>
+            </div>
+        </div>
+    </div>
     <!-- mobile nvbar -->
     <nav class="flex justify-between items-center py-4 px-5 md:hidden sticky top-0 z-10 bg-white">
         <div class="mr-5" onclick="openMenu()">
@@ -162,7 +214,8 @@
     <!-- navbar end -->
     <!-- filter box -->
     <div id="app">
-        <div id="filter-section" class="z-40 w-full h-screen pt-20 fixed bottom-0 transition-all" style="transform: translateY(100%);">
+        <div id="filter-section" class="z-40 w-full h-screen pt-20 fixed bottom-0 transition-all"
+            style="transform: translateY(100%);">
             <div class="flex flex-col justify-end h-full">
                 <div class="bg-gray-200 h-full overflow-auto rounded-t-3xl">
                     <div class="p-5 rounded-3xl bg-white ">
@@ -261,7 +314,7 @@
         </div>
         <div class="container mx-auto flex pb-5" id="app">
             <main class="w-full">
-        
+
                 <!-- hero start -->
                 <div class="px-5 mt-5 md:hidden">
                     <a href="search.html">
@@ -283,14 +336,15 @@
                             <div class="flex">
                                 <h2 class="font-bold text-4xl">Grocery</h2>
                             </div>
-                            <div class="px-3 py-2 rounded-xl cursor-pointer bg-gray-100 hover:bg-gray-200 transition-all">
+                            <div
+                                class="px-3 py-2 rounded-xl cursor-pointer bg-gray-100 hover:bg-gray-200 transition-all">
                                 All <span><i class="fa-solid fa-chevron-right"></i></span>
                             </div>
                         </div>
                         <div class="swiper top-slide hidden md:block">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide" v-for="i in 10">
-                                    <a href="">
+                                    <a href="edaM.html">
                                         <div
                                             class="bg-[url('https://eda.yandex/images/3583740/fa56a27eb64f48c689efb424c5f7b80d-600x450.png')] bg-cover bg-center rounded-3xl h-36">
                                             <div class=" absolute right-0 bottom-0">
@@ -336,7 +390,7 @@
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide" v-for="i in 10">
                                     <div class="grid grid-cols-3 gap-2">
-                                        <a href="" v-for="i in 3">
+                                        <a href="offer.html" v-for="i in 3">
                                             <div
                                                 class="bg-[url('https://avatars.mds.yandex.net/get-feeds-media/3740653/d5e04bfbf53223be207b85d3eaabf9e92afda83d/media-312-312')] bg-cover bg-center p-2 rounded-2xl h-28">
                                             </div>
@@ -345,6 +399,31 @@
                                 </div>
                             </div>
                             <div class="swiper-pagination relative mt-5"></div>
+                        </div>
+                    </div>
+                    <!-- mobile menu slider -->
+                </div>
+                <div class="mt-5 hidden md:block">
+                    <div class="overflow-hidden px-5 md:px-0">
+                        <div class="my-6 flex items-center justify-between">
+                            <div class="flex">
+                                <h2 class="font-bold text-4xl">restaurant</h2>
+                            </div>
+                        </div>
+                        <div class="flex justify-between p-2 bg-gray-100 rounded-2xl">
+                            <div>
+                                <button class="px-4 py-2 bg-white rounded-2xl">All</button>
+                                <button class="px-4 py-2 rounded-2xl hover:bg-gray-50" v-for="i in 5">Carry-Out</button>
+                                <button class="px-4 py-2 rounded-2xl hover:bg-gray-50">More <span class="ml-2"><i
+                                            class="fa-solid fa-chevron-down"></i></span></button>
+                            </div>
+                            <div>
+                                <button class="px-4 py-2 rounded-2xl hover:bg-gray-50"><span
+                                        class="font-bold">Delivery:</span> Now <span class="ml-2"><i
+                                            class="fa-solid fa-chevron-down"></i></span><button>
+                                        <button class="px-4 py-2 rounded-2xl hover:bg-gray-50"><span class="mr-2"><i
+                                                    class="fa-solid fa-sliders"></i></span>Shorting</button>
+                            </div>
                         </div>
                     </div>
                     <!-- mobile menu slider -->
@@ -377,14 +456,15 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide" onclick="openFilterBar()">
                                 <div class="flex flex-col items-center">
-                                    <div class="w-14 h-14 rounded-2xl bg-gray-200 flex items-center justify-center text-2xl">
+                                    <div
+                                        class="w-14 h-14 rounded-2xl bg-gray-200 flex items-center justify-center text-2xl">
                                         <i class="fa-solid fa-sliders"></i>
                                     </div>
                                     <p class="text-xs">Filter</p>
                                 </div>
                             </div>
                             <div class="swiper-slide" v-for="i in 6">
-                                <a href="" class="flex flex-col items-center">
+                                <a href="resturant.html" class="flex flex-col items-center">
                                     <div class="w-14">
                                         <img src="https://eda.yandex/images/3436037/073b33b4861631c7466731ce3b324278.png"
                                             alt="">
@@ -394,7 +474,8 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="flex flex-col items-center">
-                                    <div class="w-14 h-14 rounded-2xl bg-gray-200 flex items-center justify-center text-2xl">
+                                    <div
+                                        class="w-14 h-14 rounded-2xl bg-gray-200 flex items-center justify-center text-2xl">
                                         <i class="fa-solid fa-arrow-right"></i>
                                     </div>
                                     <p class="text-xs">More</p>
@@ -414,11 +495,12 @@
                             <div class="swiper top-slide hidden md:block">
                                 <div class="swiper-wrapper">
                                     <div v-for="i in 10" class="swiper-slide">
-                                        <a href="">
+                                        <a href="offer.html">
                                             <div
                                                 class="bg-[url('https://eda.yandex.ru/images/2353725/d04329b4df086d34e028849ec58673ba-450x300.jpg')] bg-cover bg-center rounded-3xl h-36 relative">
                                                 <div class=" absolute left-0 top-0 p-3">
-                                                    <div class="text-base font-bold px-3 py-2 rounded-3xl bg-[#fae098cc] flex">
+                                                    <div
+                                                        class="text-base font-bold px-3 py-2 rounded-3xl bg-[#fae098cc] flex">
                                                         <div class="">-14% with START14</div>
                                                     </div>
                                                 </div>
@@ -457,9 +539,10 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <h2 class="text-2xl font-semibold">Tanuks</h2>
+                                            <h2 class="font-semibold">Tanuks</h2>
                                             <div class="flex">
-                                                <span class="text-yellow-400 mr-3"><i class="fa-solid fa-star"></i></span>
+                                                <span class="text-yellow-400 mr-3"><i
+                                                        class="fa-solid fa-star"></i></span>
                                                 <p>4.7 Good $$$</p>
                                             </div>
                                             <div class="ml-2 mt-2">
@@ -476,10 +559,12 @@
                                     </div>
                                 </div>
                                 <div class="hidden md:block">
-                                    <div class="swiper-button-next h-12 w-12 bg-white text-black shadow-lg rounded-full">
+                                    <div
+                                        class="swiper-button-next h-12 w-12 bg-white text-black shadow-lg rounded-full">
                                         <i class="fa-solid fa-arrow-right"></i>
                                     </div>
-                                    <div class="swiper-button-prev h-12 w-12 bg-white text-black shadow-lg rounded-full">
+                                    <div
+                                        class="swiper-button-prev h-12 w-12 bg-white text-black shadow-lg rounded-full">
                                         <i class="fa-solid fa-arrow-left"></i>
                                     </div>
                                 </div>
@@ -516,16 +601,20 @@
                                         <div class="text-base font-bold px-3 py-2 rounded-3xl bg-[#fae098cc] flex">
                                             <div class="">-14% with START14</div>
                                         </div>
-                                        <div class="text-base rounded-full h-10 w-10 bg-white flex items-center justify-center">
+                                        <div
+                                            class="text-base rounded-full h-10 w-10 bg-white flex items-center justify-center">
                                             <i class="fa-regular fa-heart"></i>
                                         </div>
                                     </div>
                                     <div class=" absolute right-0 bottom-0">
-                                        <div class="text-base font-bold px-3 py-2 rounded-3xl bg-[#00000099] text-white flex">
+                                        <div
+                                            class="text-base font-bold px-3 py-2 rounded-3xl bg-[#00000099] text-white flex">
                                             <div class="mr-2">
-                                                <svg width="1em" height="1em" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                                <svg width="1em" height="1em" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg"
                                                     class="UiKitUiKitIcon_m UiKitUiKitIcon_root Corner_icon">
-                                                    <path d="M13.935 3a1.732 1.732 0 1 0 0 3.465 1.732 1.732 0 0 0 0-3.465z"
+                                                    <path
+                                                        d="M13.935 3a1.732 1.732 0 1 0 0 3.465 1.732 1.732 0 0 0 0-3.465z"
                                                         fill="#D2D0CC">
                                                     </path>
                                                     <path
@@ -561,7 +650,7 @@
                         </div>
                     </div>
                 </div>
-        
+
                 <!-- Products end -->
             </main>
         </div>

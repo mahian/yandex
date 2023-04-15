@@ -2,12 +2,13 @@ const searchField = document.getElementById("search-field");
 const searchDropdown = document.getElementById("search-dropdown");
 const menubar = document.getElementById("drawer-navigation");
 const filterBar = document.getElementById("filter-section");
+const productModal = document.getElementById("product-modal");
 
 searchField.addEventListener('keypress', () => {
     const searchText = document.querySelector("#search-field input").value;
-    if(searchText.length > 0){
+    if (searchText.length > 0) {
         searchDropdown.style.display = 'block'
-    }else{
+    } else {
         searchDropdown.style.display = "none";
     }
 })
@@ -18,6 +19,7 @@ window.onclick = () => {
 // navigation menu control
 
 function openMenu() {
+
     if (menubar.style.transform === 'translateX(-100%)') {
         menubar.style.transform = 'translateX(0%)';
     } else {
@@ -27,15 +29,24 @@ function openMenu() {
 
 // filter section collaps
 function openFilterBar() {
-    if (filterBar.style.transform == 'translateY(100%)') {
-        filterBar.style.transform = 'translateY(0%)';
-        setTimeout(() => {
-            filterBar.style.backgroundColor = '#0000006b';
-        }, 200);
+    if (window.innerWidth >= 768) {
+        if (productModal.style.display === 'none') {
+            productModal.style.display = 'flex';
+        } else {
+            productModal.style.display = 'none';
+        }
     } else {
-        filterBar.style.transform = 'translateY(100%)';
-        setTimeout(() => {
-            filterBar.style.backgroundColor = '';
-        }, 200);
+        if (filterBar.style.transform == 'translateY(100%)') {
+            filterBar.style.transform = 'translateY(0%)';
+            setTimeout(() => {
+                filterBar.style.backgroundColor = '#0000006b';
+            }, 200);
+        } else {
+            filterBar.style.transform = 'translateY(100%)';
+            setTimeout(() => {
+                filterBar.style.backgroundColor = '';
+            }, 200);
+        }
     }
 }
+console.log(window.innerWidth);
