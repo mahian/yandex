@@ -30,7 +30,7 @@ function openMenu() {
 // filter section collaps
 function openFilterBar() {
     if (window.innerWidth >= 768) {
-        if (productModal.style.display === 'none') {
+        if (productModal.style.display == 'none') {
             productModal.style.display = 'flex';
         } else {
             productModal.style.display = 'none';
